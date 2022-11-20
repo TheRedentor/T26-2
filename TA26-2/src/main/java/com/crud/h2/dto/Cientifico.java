@@ -4,12 +4,15 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name="cientificos")
@@ -67,6 +70,22 @@ public class Cientifico {
 	 */
 	public void setNomApels(String nomapels) {
 		this.nomapels = nomapels;
+	}
+	
+	/**
+	 * @return asignado_a
+	 */
+	@JsonIgnore
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "AsignadoA")
+	public List<AsignadoA> getAsignadoA() {
+		return asignado_a;
+	}
+
+	/**
+	 * @param asignado_a
+	 */
+	public void setAsignadoA(List<AsignadoA> asignado_a) {
+		this.asignado_a = asignado_a;
 	}
 	
 	

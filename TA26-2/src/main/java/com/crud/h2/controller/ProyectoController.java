@@ -29,7 +29,7 @@ public class ProyectoController {
 	
 	
 	@PostMapping("/proyectos")
-	public Proyecto salvarProyecto(Proyecto proyecto) {
+	public Proyecto salvarProyecto(@RequestBody Proyecto proyecto) {
 		
 		return proyectoServiceImpl.guardarProyecto(proyecto);
 	}
@@ -48,7 +48,7 @@ public class ProyectoController {
 	}
 	
 	@PutMapping("/proyectos/{id_proyecto}")
-	public Proyecto actualizarProyecto(@PathVariable(name="id_proyecto")int id_proyecto,Proyecto proyecto) {
+	public Proyecto actualizarProyecto(@PathVariable(name="id_proyecto")int id_proyecto,@RequestBody Proyecto proyecto) {
 		
 		Proyecto proyecto_seleccionado= new Proyecto();
 		Proyecto proyecto_actualizado= new Proyecto();

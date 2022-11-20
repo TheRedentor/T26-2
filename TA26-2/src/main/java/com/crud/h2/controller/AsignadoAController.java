@@ -28,7 +28,7 @@ public class AsignadoAController {
 	
 	
 	@PostMapping("/asignado_a")
-	public AsignadoA salvarAsignadoA(AsignadoA asignado_a) {
+	public AsignadoA salvarAsignadoA(@RequestBody AsignadoA asignado_a) {
 		
 		return asignadoAServiceImpl.guardarAsignadoA(asignado_a);
 	}
@@ -47,7 +47,7 @@ public class AsignadoAController {
 	}
 	
 	@PutMapping("/asignado_a/{codigo_asignado_a}")
-	public AsignadoA actualizarAsignadoA(@PathVariable(name="codigo_asignado_a")int codigo_asignado_a,AsignadoA asignado_a) {
+	public AsignadoA actualizarAsignadoA(@PathVariable(name="codigo_asignado_a")int codigo_asignado_a,@RequestBody AsignadoA asignado_a) {
 		
 		AsignadoA asignado_a_seleccionado= new AsignadoA();
 		AsignadoA asignado_a_actualizado= new AsignadoA();

@@ -39,9 +39,9 @@ public class AsignadoA {
 	 * @param cientifico
 	 * @param proyecto
 	 */
-	public AsignadoA(int codigo_suministra, Cientifico cientifico, Proyecto proyecto) {
+	public AsignadoA(int codigo_asignado_a, Cientifico cientifico, Proyecto proyecto) {
 		//super();
-		this.codigo_asignado_a = codigo_suministra;
+		this.codigo_asignado_a = codigo_asignado_a;
 		this.cientifico = cientifico;
 		this.proyecto = proyecto;
 	}

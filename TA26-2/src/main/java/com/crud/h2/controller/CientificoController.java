@@ -29,7 +29,7 @@ public class CientificoController {
 	
 	
 	@PostMapping("/cientificos")
-	public Cientifico salvarCientifico(Cientifico cientifico) {
+	public Cientifico salvarCientifico(@RequestBody Cientifico cientifico) {
 		
 		return cientificoServiceImpl.guardarCientifico(cientifico);
 	}
@@ -48,7 +48,7 @@ public class CientificoController {
 	}
 	
 	@PutMapping("/cientificos/{dni}")
-	public Cientifico actualizarCientifico(@PathVariable(name="dni")int dni,Cientifico cientifico) {
+	public Cientifico actualizarCientifico(@PathVariable(name="dni")int dni,@RequestBody Cientifico cientifico) {
 		
 		Cientifico cientifico_seleccionado= new Cientifico();
 		Cientifico cientifico_actualizado= new Cientifico();
